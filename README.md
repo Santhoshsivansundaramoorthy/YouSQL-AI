@@ -21,7 +21,7 @@ Once the data is stored, Google's generative AI processes user queries. Users ca
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/YouSQL-AI.git
+   git clone https://github.com/Santhoshsivansundaramoorthy/YouSQL-AI.git
    ```
 
 2. Install the required Python dependencies:
