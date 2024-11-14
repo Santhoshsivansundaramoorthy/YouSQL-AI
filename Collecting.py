@@ -5,10 +5,16 @@ import requests
 from urllib.parse import urlparse
 
 from Database import insert_video, insert_channel, insert_comment
+import toml
+
+# Load the config file
+config = toml.load("config.toml")
+
+youtube_api_key = config["api_keys"]["youtube_api_key"]
 
 
 def get_channel_id_from_handle(url):
-    api_key = "AIzaSyDtDcr_6cc1ZUiCgy7OQ0DuT20iyqyQbjM"
+    api_key = youtube_api_key
     # Extract the handle from the URL
     parsed_url = urlparse(url)
     handle = parsed_url.path.lstrip("/")  # Remove leading '/'
@@ -37,7 +43,7 @@ def get_channel_id_from_handle(url):
 
 def get_Channel_data(channel_id):
 
-    api_key = "AIzaSyDtDcr_6cc1ZUiCgy7OQ0DuT20iyqyQbjM"
+    api_key = youtube_api_key
     # Build the YouTube service
     youtube = build('youtube', 'v3', developerKey=api_key)
 
