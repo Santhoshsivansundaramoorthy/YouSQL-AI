@@ -5,12 +5,9 @@ import requests
 from urllib.parse import urlparse
 
 from Database import insert_video, insert_channel, insert_comment
-import toml
+import streamlit as st
 
-# Load the config file
-config = toml.load("config.toml")
-
-youtube_api_key = config["api_keys"]["youtube_api_key"]
+youtube_api_key = st.secrets["api_keys"]["youtube_api_key"]
 
 
 def get_channel_id_from_handle(url):
